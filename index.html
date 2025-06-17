@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>De~Engineer 001 Unlocking Solutions</title>
   <style>
     body {
@@ -20,9 +20,14 @@
       color: white;
       margin: 0 10px;
       text-decoration: none;
+      cursor: pointer;
     }
     .container {
       padding: 20px;
+      display: none;
+    }
+    .active {
+      display: block;
     }
     .service, form {
       background: white;
@@ -45,17 +50,27 @@
     h2 {
       margin-top: 40px;
     }
+    .brand-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .brand-item {
+      background-color: #eee;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
   </style>
 </head>
-<body>
+<body onload="showSection('about')">
 
 <header>
   <h1>De~Engineer 001 Unlocking Solutions</h1>
   <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#order">Place Order</a>
-    <a href="#contact">Contact</a>
+    <a onclick="showSection('about')">About</a>
+    <a onclick="showSection('services')">Services</a>
+    <a onclick="showSection('order')">Place Order</a>
+    <a onclick="showSection('contact')">Contact</a>
   </nav>
 </header>
 
@@ -65,7 +80,6 @@
     Welcome to De~Engineer 001 Unlocking Solutions — your trusted partner in mobile phone unlocking services. 
     We specialize in FRP Bypass, Network Unlocking, IMEI Repair, and Bootloader Unlocking. 
     Our mission is to provide fast, reliable, and affordable solutions for users around the world.
-    Whether you're locked out or stuck on setup, we’ve got the tools and expertise to help.
   </p>
 </div>
 
@@ -79,23 +93,37 @@
 
   <div class="service">
     <h3>Network Unlock</h3>
-    <p>Unlock devices tied to any carrier globally.</p>
+    <p>Unlock phones tied to any carrier — worldwide.</p>
   </div>
 
   <div class="service">
     <h3>IMEI Repair</h3>
-    <p>Restore or repair IMEI for supported devices using professional tools.</p>
+    <p>Restore original IMEI on supported devices using safe tools.</p>
   </div>
 
   <div class="service">
     <h3>Bootloader Unlock</h3>
-    <p>Unlock your bootloader safely to install custom ROMs or perform advanced flashing.</p>
+    <p>Open bootloader to flash ROMs, recover bricked devices or install custom OS.</p>
+  </div>
+
+  <h3>Supported Smartphone Brands</h3>
+  <div class="brand-list">
+    <div class="brand-item">Samsung</div>
+    <div class="brand-item">Huawei</div>
+    <div class="brand-item">Xiaomi</div>
+    <div class="brand-item">Vivo</div>
+    <div class="brand-item">Oppo</div>
+    <div class="brand-item">Infinix</div>
+    <div class="brand-item">Tecno</div>
+    <div class="brand-item">iTel</div>
+    <div class="brand-item">Realme</div>
+    <div class="brand-item">Motorola</div>
+    <div class="brand-item">OnePlus</div>
   </div>
 </div>
 
 <div class="container" id="order">
   <h2>Place Your Order</h2>
-
   <form action="https://formsubmit.co/hasdantech002@gmail.com" method="POST">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_subject" value="New Unlocking Request from Website">
@@ -127,10 +155,24 @@
 
 <div class="container" id="contact">
   <h2>Contact Us</h2>
-  <p><strong>WhatsApp:</strong> +232 75800808</p>
-  <p><strong>WhatsApp:</strong> 074 035146</p>
+  <p>
+    <strong>WhatsApp (Main):</strong> 
+    <a href="https://wa.me/23275800808" target="_blank">+232 75800808</a>
+  </p>
+  <p>
+    <strong>WhatsApp (Alt):</strong> 
+    <a href="https://wa.me/23274035146" target="_blank">074 035146</a>
+  </p>
   <p><strong>Email:</strong> hasdantech002@gmail.com</p>
 </div>
+
+<script>
+  function showSection(sectionId) {
+    const sections = document.querySelectorAll('.container');
+    sections.forEach(sec => sec.classList.remove('active'));
+    document.getElementById(sectionId).classList.add('active');
+  }
+</script>
 
 </body>
 </html>
