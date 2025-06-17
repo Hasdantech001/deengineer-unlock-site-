@@ -39,18 +39,12 @@
     section.active {
       display: block;
     }
-    .service-list, .brand-list, .tool-list {
+    .form-section {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      flex-direction: column;
+      gap: 20px;
     }
-    .service-item, .brand-item, .tool-item {
-      background: #1a1c2c;
-      padding: 15px;
-      border-radius: 8px;
-      flex: 1 1 200px;
-    }
-    form input, form textarea, form button {
+    form input, form textarea, form select, form button {
       width: 100%;
       padding: 10px;
       margin: 10px 0;
@@ -79,6 +73,15 @@
       font-size: 24px;
       text-decoration: none;
     }
+    .tool-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background-color: #1a73e8;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body onload="showSection('about')"><header>
@@ -86,53 +89,55 @@
 </header>
 <nav>
   <a onclick="showSection('about')">About</a>
-  <a onclick="showSection('services')">Services</a>
-  <a onclick="showSection('order')">Place Order</a>
+  <a onclick="showSection('services')">Services & Order</a>
   <a onclick="showSection('tools')">Tools</a>
   <a onclick="showSection('brands')">Smartphone Brands</a>
   <a onclick="showSection('contact')">Contact</a>
 </nav><section id="about" class="active">
   <h2>About Us</h2>
-  <p>We specialize in unlocking mobile devices, removing FRP locks, and providing premium mobile solutions. Fast, secure, and professional service guaranteed!</p>
+  <p>We specialize in unlocking mobile devices, removing FRP locks, IMEI repair, and providing premium mobile solutions. Fast, secure, and professional service guaranteed!</p>
 </section><section id="services">
-  <h2>Our Services</h2>
-  <div class="service-list">
-    <div class="service-item">Samsung FRP Removal</div>
-    <div class="service-item">iPhone iCloud Clean Removal</div>
-    <div class="service-item">Network Unlocking (All Brands)</div>
-    <div class="service-item">Bootloader Unlock</div>
-    <div class="service-item">MTK/Qualcomm Repair</div>
+  <h2>Unlocking Services & Place Order</h2>
+  <div class="form-section">
+    <form action="https://formsubmit.co/hasdantech002@gmail.com" method="POST" onsubmit="showSuccess()">
+      <input type="hidden" name="_next" value="https://deengineer-unlock-site.github.io/#success">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="phone" placeholder="WhatsApp Number" required>
+      <label for="service">Select Service:</label>
+      <select name="service" required>
+        <option value="Network Unlock">Network Unlock</option>
+        <option value="FRP Bypass">FRP Bypass</option>
+        <option value="IMEI Repair">IMEI Repair</option>
+        <option value="Bootloader Unlock">Bootloader Unlock</option>
+        <option value="iCloud Clean Removal">iCloud Clean Removal</option>
+      </select>
+      <textarea name="details" placeholder="Enter device model or extra details" required></textarea>
+      <button type="submit">Submit Order</button>
+    </form>
   </div>
-</section><section id="order">
-  <h2>Place Order</h2>
-  <form action="https://formsubmit.co/hasdantech002@gmail.com" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="text" name="phone" placeholder="WhatsApp Number" required>
-    <textarea name="service" placeholder="Which service do you need?" required></textarea>
-    <button type="submit">Send Request</button>
-  </form>
 </section><section id="tools">
   <h2>Remote Tools</h2>
-  <div class="tool-list">
-    <div class="tool-item"><a href="https://www.uvnc.com/downloads/ultravnc.html" target="_blank">UltraViewer</a></div>
-    <div class="tool-item"><a href="https://anydesk.com/en/downloads" target="_blank">AnyDesk</a></div>
-  </div>
+  <a class="tool-button" href="https://www.uvnc.com/downloads/ultravnc.html" target="_blank">Download UltraViewer</a>
+  <a class="tool-button" href="https://anydesk.com/en/downloads" target="_blank">Download AnyDesk</a>
 </section><section id="brands">
   <h2>Smartphone Brands</h2>
-  <div class="brand-list">
-    <div class="brand-item">Samsung</div>
-    <div class="brand-item">Xiaomi</div>
-    <div class="brand-item">Infinix</div>
-    <div class="brand-item">Tecno</div>
-    <div class="brand-item">Realme</div>
-    <div class="brand-item">iPhone</div>
-  </div>
+  <ul>
+    <li>Samsung</li>
+    <li>Infinix</li>
+    <li>Tecno</li>
+    <li>iPhone</li>
+    <li>Realme</li>
+    <li>Xiaomi</li>
+  </ul>
 </section><section id="contact">
   <h2>Contact Us</h2>
-  <p>📧 <a href="mailto:hasdantech002@gmail.com">hasdantech002@gmail.com</a></p>
-  <p>📱 <a href="https://wa.me/23275800808" target="_blank">+232 75800808 (WhatsApp)</a></p>
-  <p>📱 <a href="https://wa.me/23274035146" target="_blank">+232 74035146 (WhatsApp)</a></p>
+  <p>Email: <a href="mailto:hasdantech002@gmail.com">hasdantech002@gmail.com</a></p>
+  <p>WhatsApp: <a href="https://wa.me/23275800808" target="_blank">+232 75800808</a></p>
+  <p>WhatsApp: <a href="https://wa.me/23274035146" target="_blank">+232 74035146</a></p>
+</section><section id="success">
+  <h2>✅ Order Submitted!</h2>
+  <p>Thank you for your request. We will respond to your email or WhatsApp shortly.</p>
 </section><a href="https://wa.me/23275800808" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
 
 <div class="footer">
@@ -141,6 +146,9 @@
   function showSection(id) {
     document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
     document.getElementById(id).classList.add('active');
+  }
+  function showSuccess() {
+    setTimeout(() => showSection('success'), 500);
   }
 </script></body>
 </html>
