@@ -1,409 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>De~Engineer 001 Unlocking Solutions</title>
   <style>
-    :root {
-      --bg-color: #1f1f2e;
-      --primary: #00c3ff;
-      --card-bg: #2c2c3a;
-      --text: #e0e0e0;
-      --hover-bg: #007bb8;
-    }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text);
       margin: 0;
-      min-height: 100vh;
-      position: relative;
-      padding-bottom: 80px; /* space for floating whatsapp */
+      font-family: Arial, sans-serif;
+      background-color: #0f111a;
+      color: #e0e0e0;
     }
-
     header {
-      background-color: var(--primary);
-      color: white;
+      background-color: #00c3ff;
+      color: #fff;
       padding: 20px;
       text-align: center;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.4);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 18px;
-      padding: 5px 10px;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: var(--hover-bg);
-    }
-
-    .container {
-      padding: 20px;
-      display: none;
-      max-width: 900px;
-      margin: 30px auto;
-      background-color: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
-    }
-
-    .active {
-      display: block;
-    }
-
-    h1, h2, h3 {
-      color: var(--primary);
-    }
-
-    /* Services */
-    .service {
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      background-color: #323247;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.25);
-    }
-
-    /* Brand list */
-    .brand-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .brand-item {
-      background-color: #44475a;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-weight: 600;
-      box-shadow: inset 0 0 8px #00c3ff66;
-    }
-
-    /* Forms */
-    form label {
-      display: block;
-      margin-top: 15px;
-      font-weight: 600;
-      font-size: 16px;
-    }
-
-    input, select, textarea, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 6px;
-      border-radius: 6px;
-      border: none;
-      font-size: 16px;
-      background-color: #3a3a59;
-      color: white;
-      box-sizing: border-box;
-      resize: vertical;
-    }
-
-    button {
-      background-color: var(--primary);
-      cursor: pointer;
-      font-weight: 700;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
-      box-shadow: 0 4px 10px #00c3ffaa;
-    }
-
-    button:hover {
-      background-color: #009ddc;
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Floating WhatsApp */
-    #whatsapp-float {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: #25d366;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    nav {
       display: flex;
       justify-content: center;
-      align-items: center;
-      z-index: 1100;
+      gap: 15px;
+      background-color: #1a1c2c;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
-
-    #whatsapp-float:hover {
-      background-color: #128c36;
+    nav a:hover {
+      text-decoration: underline;
     }
-
-    #whatsapp-float svg {
-      width: 32px;
-      height: 32px;
-      fill: white;
-    }
-
-    /* Pricing table */
-    .pricing-table {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-      gap: 20px;
-      margin-top: 25px;
-    }
-
-    .price-card {
-      background-color: #2e2e46;
-      border-radius: 10px;
+    section {
+      display: none;
       padding: 20px;
-      text-align: center;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
-      transition: transform 0.3s ease;
     }
-
-    .price-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px #00c3ffaa;
+    section.active {
+      display: block;
     }
-
-    .price-card h3 {
-      margin-bottom: 12px;
-      font-weight: 700;
-      color: var(--primary);
+    .service-list, .brand-list, .tool-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
-
-    .price-figure {
-      font-size: 28px;
+    .service-item, .brand-item, .tool-item {
+      background: #1a1c2c;
+      padding: 15px;
+      border-radius: 8px;
+      flex: 1 1 200px;
+    }
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 10px;
       margin: 10px 0;
-      color: #999;
-      font-style: italic;
+      border-radius: 6px;
+      border: none;
     }
-
-    /* Tool downloads */
-    .tools-list {
-      margin-top: 15px;
-    }
-
-    .tools-list a {
-      display: inline-block;
-      margin: 6px 12px 6px 0;
-      background-color: #44475a;
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-weight: 600;
-      box-shadow: inset 0 0 6px #00c3ff66;
-      transition: background-color 0.3s ease;
-    }
-
-    .tools-list a:hover {
+    form button {
       background-color: #00c3ff;
-      color: #222;
-      box-shadow: 0 0 10px #00c3ffcc;
+      color: white;
+      cursor: pointer;
     }
-
-    /* Client tracking */
-    #tracking-result {
-      margin-top: 20px;
-      background-color: #3a3a59;
-      padding: 12px;
-      border-radius: 8px;
-      font-weight: 600;
-      color: var(--primary);
+    .footer {
+      background: #1a1c2c;
+      color: #ccc;
+      padding: 15px;
+      text-align: center;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 24px;
+      text-decoration: none;
     }
   </style>
 </head>
-<body onload="showSection('about')">
-
-<header>
+<body onload="showSection('about')"><header>
   <h1>De~Engineer 001 Unlocking Solutions</h1>
-  <nav>
-    <a onclick="showSection('about')">About</a>
-    <a onclick="showSection('services')">Services</a>
-    <a onclick="showSection('order')">Place Order</a>
-    <a onclick="showSection('tracking')">Track Order</a>
-    <a onclick="showSection('dashboard')">Dashboard</a>
-    <a onclick="showSection('contact')">Contact</a>
-  </nav>
 </header>
-
-<!-- About Section -->
-<div class="container" id="about">
+<nav>
+  <a onclick="showSection('about')">About</a>
+  <a onclick="showSection('services')">Services</a>
+  <a onclick="showSection('order')">Place Order</a>
+  <a onclick="showSection('tools')">Tools</a>
+  <a onclick="showSection('brands')">Smartphone Brands</a>
+  <a onclick="showSection('contact')">Contact</a>
+</nav><section id="about" class="active">
   <h2>About Us</h2>
-  <p>
-    Welcome to De~Engineer 001 Unlocking Solutions — your trusted partner in mobile phone unlocking services. 
-    We specialize in FRP Bypass, Network Unlocking, IMEI Repair, and Bootloader Unlocking.
-    Our mission is to provide fast, reliable, and affordable solutions for users worldwide.
-  </p>
-</div>
-
-<!-- Services Section -->
-<div class="container" id="services">
-  <h2>Our Unlocking Services</h2>
-
-  <div class="service">
-    <h3>FRP Bypass</h3>
-    <p>We bypass FRP locks on most Android devices quickly and securely.</p>
+  <p>We specialize in unlocking mobile devices, removing FRP locks, and providing premium mobile solutions. Fast, secure, and professional service guaranteed!</p>
+</section><section id="services">
+  <h2>Our Services</h2>
+  <div class="service-list">
+    <div class="service-item">Samsung FRP Removal</div>
+    <div class="service-item">iPhone iCloud Clean Removal</div>
+    <div class="service-item">Network Unlocking (All Brands)</div>
+    <div class="service-item">Bootloader Unlock</div>
+    <div class="service-item">MTK/Qualcomm Repair</div>
   </div>
-
-  <div class="service">
-    <h3>Network Unlock</h3>
-    <p>Unlock phones tied to any carrier — worldwide.</p>
+</section><section id="order">
+  <h2>Place Order</h2>
+  <form action="https://formsubmit.co/hasdantech002@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="phone" placeholder="WhatsApp Number" required>
+    <textarea name="service" placeholder="Which service do you need?" required></textarea>
+    <button type="submit">Send Request</button>
+  </form>
+</section><section id="tools">
+  <h2>Remote Tools</h2>
+  <div class="tool-list">
+    <div class="tool-item"><a href="https://www.uvnc.com/downloads/ultravnc.html" target="_blank">UltraViewer</a></div>
+    <div class="tool-item"><a href="https://anydesk.com/en/downloads" target="_blank">AnyDesk</a></div>
   </div>
-
-  <div class="service">
-    <h3>IMEI Repair</h3>
-    <p>Restore original IMEI on supported devices using safe tools.</p>
-  </div>
-
-  <div class="service">
-    <h3>Bootloader Unlock</h3>
-    <p>Open bootloader to flash ROMs, recover bricked devices or install custom OS.</p>
-  </div>
-
-  <h3>Supported Smartphone Brands</h3>
+</section><section id="brands">
+  <h2>Smartphone Brands</h2>
   <div class="brand-list">
     <div class="brand-item">Samsung</div>
-    <div class="brand-item">Huawei</div>
     <div class="brand-item">Xiaomi</div>
-    <div class="brand-item">Vivo</div>
-    <div class="brand-item">Oppo</div>
     <div class="brand-item">Infinix</div>
     <div class="brand-item">Tecno</div>
-    <div class="brand-item">iTel</div>
     <div class="brand-item">Realme</div>
-    <div class="brand-item">Motorola</div>
-    <div class="brand-item">OnePlus</div>
+    <div class="brand-item">iPhone</div>
   </div>
-
-  <h3>Download Unlock Tools</h3>
-  <div class="tools-list">
-    <a href="https://ultraviewer.net/en/download.html" target="_blank" rel="noopener noreferrer">UltraViewer Remote Tool</a>
-    <a href="https://www.teamviewer.com/en/download/windows/" target="_blank" rel="noopener noreferrer">TeamViewer QuickSupport</a>
-    <a href="#" target="_blank" rel="noopener noreferrer">Unlock Tool APK</a>
-    <a href="#" target="_blank" rel="noopener noreferrer">Unlock Tool Windows EXE</a>
-  </div>
-</div>
-
-<!-- Place Order Section -->
-<div class="container" id="order">
-  <h2>Place Your Order</h2>
-  <form action="https://formsubmit.co/hasdantech002@gmail.com" method="POST" target="_blank">
-    <input type="hidden" name="_captcha" value="false" />
-    <input type="hidden" name="_subject" value="New Unlocking Request from Website" />
-
-    <label>Your Name</label>
-    <input type="text" name="name" required />
-
-    <label>Email Address</label>
-    <input type="email" name="email" required />
-
-    <label>Select Service</label>
-    <select name="service" required>
-      <option value="">-- Choose Service --</option>
-      <option>FRP Bypass</option>
-      <option>Network Unlock</option>
-      <option>IMEI Repair</option>
-      <option>Bootloader Unlock</option>
-    </select>
-
-    <label>Device Model & Info</label>
-    <input type="text" name="device_info" placeholder="e.g. Samsung A12, Android 11" required />
-
-    <label>Additional Message</label>
-    <textarea name="message" rows="4" placeholder="Add any important details here..."></textarea>
-
-    <button type="submit">Submit Request</button>
-  </form>
-</div>
-
-<!-- Track Order Section -->
-<div class="container" id="tracking">
-  <h2>Track Your Order</h2>
-  <p>Enter your Order ID to check your order status.</p>
-  <form id="tracking-form">
-    <input type="text" id="order-id" placeholder="Enter Order ID" required />
-    <button type="submit">Check Status</button>
-  </form>
-  <div id="tracking-result"></div>
-</div>
-
-<!-- Dashboard Section -->
-<div class="container" id="dashboard">
-  <h2>Service Request Dashboard</h2>
-  <p><em>Note: This is a simple demo dashboard with no real backend. Orders you receive will come to your email.</em></p>
-  <p>To manage orders, check your email inbox for new requests.</p>
-</div>
-
-<!-- Contact Section -->
-<div class="container" id="contact">
+</section><section id="contact">
   <h2>Contact Us</h2>
-  <p><strong>WhatsApp (Main):</strong> 
-    <a href="https://wa.me/23275800808" target="_blank" rel="noopener noreferrer">+232 75800808</a></p>
+  <p>📧 <a href="mailto:hasdantech002@gmail.com">hasdantech002@gmail.com</a></p>
+  <p>📱 <a href="https://wa.me/23275800808" target="_blank">+232 75800808 (WhatsApp)</a></p>
+  <p>📱 <a href="https://wa.me/23274035146" target="_blank">+232 74035146 (WhatsApp)</a></p>
+</section><a href="https://wa.me/23275800808" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
 
-  <p><strong>WhatsApp (Alt):</strong> 
-    <a href="https://wa.me/23274035146" target="_blank" rel="noopener noreferrer">074 035146</a></p>
-
-  <p><strong>Email:</strong> 
-    <a href="mailto:hasdantech002@gmail.com">hasdantech002@gmail.com</a></p>
-</div>
-
-<!-- Floating WhatsApp -->
-<a id="whatsapp-float" href="https://wa.me/23275800808" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24">
-    <path d="M20.52 3.48A11.91 11.91 0 0 0 12 0C5.373 0 0 5.373 0 12a11.87 11.87 0 0 0 1.646 6.102L0 24l5.985-1.572A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12 0-3.204-1.245-6.216-3.48-8.52zm-8.04 17.004c-2.16 0-4.14-.606-5.814-1.65l-.42-.246-3.546.933.95-3.463-.27-.426a8.897 8.897 0 0 1-1.37-4.572c0-4.92 4.02-8.94 8.94-8.94 2.382 0 4.62.93 6.3 2.61a8.835 8.835 0 0 1 2.61 6.33c0 4.92-4.02 8.94-8.94 8.94zm4.776-6.456c-.264-.132-1.56-.768-1.8-.852-.24-.084-.414-.132-.588.132-.168.264-.648.852-.792 1.02-.144.168-.288.192-.552.072-.264-.12-1.11-.408-2.118-1.308-.78-.696-1.308-1.56-1.464-1.824-.144-.264-.015-.408.108-.54.108-.108.24-.288.36-.432.12-.144.16-.24.24-.408.08-.168.04-.312-.02-.432-.06-.12-.588-1.416-.804-1.944-.216-.516-.436-.456-.588-.464l-.504-.012c-.168 0-.432.06-.66.288-.228.24-.864.84-.864 2.04s.888 2.364 1.012 2.532c.12.168 1.744 2.664 4.224 3.732.588.252 1.044.4 1.4.51.588.18 1.124.156 1.548.096.472-.072 1.44-.588 1.644-1.152.204-.564.204-1.05.144-1.152-.06-.096-.216-.144-.48-.264z"/>
-  </svg>
-</a>
-
-<script>
-  function showSection(sectionId) {
-    const sections = document.querySelectorAll('.container');
-    sections.forEach(sec => sec.classList.remove('active'));
-    document.getElementById(sectionId).classList.add('active');
+<div class="footer">
+  <p>&copy; 2025 De~Engineer 001 Unlocking Solutions. All rights reserved.</p>
+</div><script>
+  function showSection(id) {
+    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
   }
-
-  // Simple client tracking simulation - replace with your backend logic
-  const fakeOrders = {
-    '12345': 'Order 12345: Completed',
-    '67890': 'Order 67890: In Progress',
-    'abcde': 'Order abcde: Awaiting Payment'
-  };
-
-  document.getElementById('tracking-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    const orderId = document.getElementById('order-id').value.trim();
-    const resultDiv = document.getElementById('tracking-result');
-
-    if(orderId === '') {
-      resultDiv.textContent = 'Please enter a valid Order ID.';
-      return;
-    }
-
-    if(fakeOrders[orderId]) {
-      resultDiv.textContent = fakeOrders[orderId];
-    } else {
-      resultDiv.textContent = 'Order ID not found. Please check your order confirmation email.';
-    }
-  });
-</script>
-
-</body>
+</script></body>
 </html>
