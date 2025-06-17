@@ -3,116 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="De~Engineer 001 Unlocking Solutions - Unlock your mobile phones, FRP removal, and custom software tools" />
   <title>De~Engineer 001 Unlocking Solutions</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       background-color: #0d1117;
-      color: #ffffff;
+      color: #fff;
     }
     header {
       background-color: #161b22;
-      padding: 1rem;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #30363d;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #58a6ff;
+      cursor: default;
     }
     nav a {
       color: #58a6ff;
-      margin: 0 1rem;
+      margin-left: 1.5rem;
       text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
-    .hero {
+    nav a:hover {
+      color: #1f6feb;
+    }
+    .contact-info {
+      color: #8b949e;
+      font-size: 0.9rem;
+    }
+    main {
       padding: 2rem;
-      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
     }
-    .section {
-      padding: 2rem;
+    h1, h2 {
+      color: #58a6ff;
     }
-    .tools {
+    .order-form {
       background-color: #21262d;
-      padding: 1rem;
+      padding: 1.5rem;
       border-radius: 8px;
-      margin-bottom: 1rem;
+      margin-top: 2rem;
+      box-shadow: 0 0 8px rgba(5, 150, 105, 0.4);
     }
-    footer {
-      background-color: #161b22;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.8rem;
+    .order-form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: #c9d1d9;
     }
-    .button {
+    .order-form input,
+    .order-form select,
+    .order-form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    .order-form button {
+      margin-top: 1.5rem;
       background-color: #238636;
       color: white;
-      padding: 0.5rem 1rem;
+      padding: 0.7rem 1.2rem;
       border: none;
-      border-radius: 4px;
+      border-radius: 6px;
+      font-weight: 700;
       cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 0.5rem;
+      transition: background-color 0.3s ease;
+    }
+    .order-form button:hover {
+      background-color: #2ea043;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>De~Engineer 001 Unlocking Solutions</h1>
+    <div class="logo">De~Engineer 001</div>
     <nav>
       <a href="#home">Home</a>
       <a href="#services">Services</a>
       <a href="#tools">Tools</a>
+      <a href="#order">Order</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div class="contact-info">
+      WhatsApp: <a href="https://wa.me/23275800808" style="color:#58a6ff;" target="_blank" rel="noopener">+232 758 00808</a>
+    </div>
   </header>
 
-  <section class="hero" id="home">
-    <h2>Welcome to De~Engineer 001</h2>
-    <p>Fast, trusted unlocking solutions for mobile phones — FRP, IMEI, bootloader, and more.</p>
-  </section>
+  <main>
+    <section id="home">
+      <h1>Welcome to De~Engineer 001 Unlocking Solutions</h1>
+      <p>Fast, trusted unlocking solutions for mobile phones — FRP, IMEI, bootloader unlock, and more.</p>
+    </section>
 
-  <section class="section" id="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>FRP Removal (Samsung, Xiaomi, others)</li>
-      <li>IMEI Repair</li>
-      <li>Bootloader Unlock</li>
-      <li>Software Flashing & Fixes</li>
-    </ul>
-  </section>
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li>FRP Removal (Samsung, Xiaomi, others)</li>
+        <li>IMEI Repair</li>
+        <li>Bootloader Unlock</li>
+        <li>Software Flashing & Fixes</li>
+      </ul>
+    </section>
 
-  <section class="section" id="tools">
-    <h2>Our Tools</h2>
-    <div class="tools">
-      <h3>AnyDesk Remote Tool</h3>
-      <p>Use this tool to connect remotely for unlocking support.</p>
-      <a href="https://anydesk.com/en/downloads" class="button" target="_blank" rel="noopener noreferrer">Download AnyDesk</a>
-    </div>
-    <div class="tools">
-      <h3>TeamViewer Remote Tool</h3>
-      <p>Alternative remote support option for unlocking assistance.</p>
-      <a href="https://www.teamviewer.com/en/download/" class="button" target="_blank" rel="noopener noreferrer">Download TeamViewer</a>
-    </div>
-    <div class="tools">
-      <h3>DeEngineer FRP Tool</h3>
-      <p>Bypass FRP on multiple Android brands easily.</p>
-      <a href="#" class="button">Download</a>
-    </div>
-    <div class="tools">
-      <h3>Samsung Unlock Patch v2.3</h3>
-      <p>Unlock Samsung bootloader with one click.</p>
-      <a href="#" class="button">Download</a>
-    </div>
-  </section>
+    <section id="tools">
+      <h2>Our Tools</h2>
+      <p>Download remote tools for unlocking support:</p>
+      <ul>
+        <li><a href="https://anydesk.com/en/downloads" target="_blank" rel="noopener">AnyDesk</a></li>
+        <li><a href="https://www.teamviewer.com/en/download/" target="_blank" rel="noopener">TeamViewer</a></li>
+      </ul>
+    </section>
 
-  <section class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>WhatsApp: <a href="https://wa.me/23275800808" class="button" target="_blank" rel="noopener noreferrer">Chat Now</a></p>
-    <p>Email: <a href="mailto:hasdantech002@gmail.com" class="button">hasdantech002@gmail.com</a></p>
-  </section>
+    <section id="order" class="order-form">
+      <h2>Place Your Order</h2>
+      <form action="https://formspree.io/f/mlezzyor" method="POST">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" id="name" required />
 
-  <footer>
-    <p>&copy; 2025 De~Engineer 001 Unlocking Solutions. All rights reserved.</p>
-  </footer>
+        <label for="phone">Phone Number</label>
+        <input type="tel" name="phone" id="phone" required />
+
+        <label for="service">Select Service</label>
+        <select name="service" id="service" required>
+          <option value="">-- Choose a Service --</option>
+          <option value="FRP Removal">FRP Removal</option>
+          <option value="IMEI Repair">IMEI Repair</option>
+          <option value="Bootloader Unlock">Bootloader Unlock</option>
+          <option value="Software Flashing">Software Flashing</option>
+        </select>
+
+        <label for="message">Additional Details</label>
+        <textarea name="message" id="message" rows="4" placeholder="Write any extra info..."></textarea>
+
+        <button type="submit">Send Order</button>
+      </form>
+    </section>
+
+    <section id="contact" style="margin-top: 3rem;">
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:hasdantech002@gmail.com" style="color:#58a6ff;">hasdantech002@gmail.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/23275800808" style="color:#58a6ff;" target="_blank" rel="noopener">+232 758 00808</a></p>
+    </section>
+  </main>
 </body>
 </html>
