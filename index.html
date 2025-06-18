@@ -2,31 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>De~Engineer 001 Unlocking Solutions</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #0f111a; color: #e0e0e0; }
-    header { background: #00c3ff; padding: 20px; text-align: center; }
-    header img { max-height: 60px; vertical-align: middle; }
-    header h1 { display: inline-block; margin-left: 15px; vertical-align: middle; font-size: 24px; color: #fff; }
-    nav { display: flex; justify-content: center; gap: 15px; background: #1a1c2c; padding: 10px; flex-wrap: wrap; }
-    nav a { color: #fff; text-decoration: none; font-weight: bold; cursor: pointer; }
-    nav a:hover { text-decoration: underline; }
-    section { display: none; padding: 20px; }
-    section.active { display: block; }
-    form input, form select, form textarea, form button {
-      width: 100%; padding: 10px; margin: 10px 0; border-radius: 6px; border: none;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f111a;
+      color: #e0e0e0;
     }
-    form button { background: #00c3ff; color: white; font-weight: bold; cursor: pointer; }
-    .tool-button { display: inline-block; margin: 10px 10px 10px 0; padding: 12px 20px; background: #1a73e8; color: #fff; text-decoration: none; border-radius: 8px; }
-    .footer { background: #1a1c2c; color: #ccc; padding: 15px; text-align: center; }
-    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff; padding: 12px 16px; border-radius: 50%; font-size: 24px; text-decoration: none; z-index: 100; }
+    header {
+      background: #00c3ff;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    header img {
+      max-height: 60px;
+      width: auto;
+      display: block;
+    }
+    header h1 {
+      font-size: 24px;
+      color: white;
+      margin: 0;
+      white-space: nowrap;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background: #1a1c2c;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      display: none;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    section.active {
+      display: block;
+    }
+    form input,
+    form select,
+    form textarea,
+    form button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    form button {
+      background: #00c3ff;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form button:hover {
+      background: #0099cc;
+    }
+    .tool-button {
+      display: inline-block;
+      margin: 10px 10px 10px 0;
+      padding: 12px 20px;
+      background: #1a73e8;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .footer {
+      background: #1a1c2c;
+      color: #ccc;
+      padding: 15px;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 24px;
+      text-decoration: none;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    ul {
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    @media(max-width: 480px) {
+      header {
+        flex-direction: column;
+      }
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav a {
+        padding: 8px 0;
+      }
+    }
   </style>
 </head>
 <body onload="showSection('about')">
 
   <header>
-    <img src="https://i.imgur.com/NMfPy3P.png" alt="De~Engineer Logo" />
+    <img src="https://i.imgur.com/0XPKDJ7.png" alt="De~Engineer Logo" />
     <h1>De~Engineer 001 Unlocking Solutions</h1>
   </header>
 
@@ -47,10 +155,10 @@
   <section id="services">
     <h2>Unlocking Services & Place Order</h2>
     <form action="https://formsubmit.co/hasdantech002@gmail.com" method="POST">
-      <input type="hidden" name="_next" value="https://deengineer-unlock-site.github.io/#success">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="text" name="phone" placeholder="WhatsApp Number" required>
+      <input type="hidden" name="_next" value="https://deengineer-unlock-site.github.io/#success" />
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="text" name="phone" placeholder="WhatsApp Number" required />
       <select name="service" required>
         <option value="">Select Service</option>
         <option>Network Unlock</option>
@@ -66,37 +174,49 @@
 
   <section id="software">
     <h2>Unlocking Software</h2>
-    <a class="tool-button" href="https://www.unlocktool.net" target="_blank">UnlockTool</a>
-    <a class="tool-button" href="https://octoplusbox.com/" target="_blank">Octoplus</a>
-    <a class="tool-button" href="https://chimera-tool.com/" target="_blank">Chimera Tool</a>
-    <a class="tool-button" href="https://sigmakey.com/" target="_blank">SigmaKey</a>
-    <a class="tool-button" href="https://www.miracleteam.in/" target="_blank">Miracle Box</a>
+    <a class="tool-button" href="https://www.unlocktool.net" target="_blank" rel="noopener">UnlockTool</a>
+    <a class="tool-button" href="https://octoplusbox.com/" target="_blank" rel="noopener">Octoplus</a>
+    <a class="tool-button" href="https://chimera-tool.com/" target="_blank" rel="noopener">Chimera Tool</a>
+    <a class="tool-button" href="https://sigmakey.com/" target="_blank" rel="noopener">SigmaKey</a>
+    <a class="tool-button" href="https://www.miracleteam.in/" target="_blank" rel="noopener">Miracle Box</a>
   </section>
 
   <section id="tools">
     <h2>Remote Tools</h2>
-    <a class="tool-button" href="https://www.ultraviewer.net/en/UltraViewer_setup_6.6_en.exe" target="_blank">UltraViewer</a>
-    <a class="tool-button" href="https://anydesk.com/en/downloads" target="_blank">AnyDesk</a>
-    <a class="tool-button" href="https://www.teamviewer.com/en/download/windows/" target="_blank">TeamViewer</a>
+    <a class="tool-button" href="https://www.ultraviewer.net/en/UltraViewer_setup_6.6_en.exe" target="_blank" rel="noopener">UltraViewer</a>
+    <a class="tool-button" href="https://anydesk.com/en/downloads" target="_blank" rel="noopener">AnyDesk</a>
+    <a class="tool-button" href="https://www.teamviewer.com/en/download/windows/" target="_blank" rel="noopener">TeamViewer</a>
   </section>
 
   <section id="brands">
     <h2>Smartphone Brands</h2>
     <ul>
-      <li>Samsung</li><li>Infinix</li><li>Tecno</li><li>iPhone</li><li>Realme</li>
-      <li>Xiaomi</li><li>Huawei</li><li>Itel</li><li>Lenovo</li><li>Nokia</li>
-      <li>Oppo</li><li>OnePlus</li><li>Vivo</li><li>Motorola</li><li>Alldocube</li>
+      <li>Samsung</li>
+      <li>Infinix</li>
+      <li>Tecno</li>
+      <li>iPhone</li>
+      <li>Realme</li>
+      <li>Xiaomi</li>
+      <li>Huawei</li>
+      <li>Itel</li>
+      <li>Lenovo</li>
+      <li>Nokia</li>
+      <li>Oppo</li>
+      <li>OnePlus</li>
+      <li>Vivo</li>
+      <li>Motorola</li>
+      <li>Alldocube</li>
     </ul>
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:hasdantech002@gmail.com">hasdantech002@gmail.com</a></p>
-    <p>WhatsApp 1: <a href="https://wa.me/23275800808" target="_blank">+232 75800808</a></p>
-    <p>WhatsApp 2: <a href="https://wa.me/23274035146" target="_blank">+232 74035146</a></p>
+    <p>Email: <a href="mailto:hasdantech002@gmail.com" style="color:#00c3ff;">hasdantech002@gmail.com</a></p>
+    <p>WhatsApp 1: <a href="https://wa.me/23275800808" target="_blank" style="color:#00c3ff;">+232 75800808</a></p>
+    <p>WhatsApp 2: <a href="https://wa.me/23274035146" target="_blank" style="color:#00c3ff;">+232 74035146</a></p>
   </section>
 
-  <a href="https://wa.me/23275800808" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
+  <a href="https://wa.me/23275800808" class="whatsapp-float" title="Chat on WhatsApp" target="_blank" rel="noopener">💬</a>
 
   <div class="footer">
     <p>&copy; 2025 De~Engineer 001 Unlocking Solutions. All rights reserved.</p>
@@ -106,7 +226,16 @@
     function showSection(id) {
       document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
+      window.location.hash = id;
     }
+
+    // Show section from URL hash on page load (optional)
+    window.onload = () => {
+      const hash = window.location.hash.substring(1);
+      if (hash && document.getElementById(hash)) {
+        showSection(hash);
+      }
+    };
   </script>
 
 </body>
