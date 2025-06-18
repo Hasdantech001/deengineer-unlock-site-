@@ -1,7 +1,8 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>De~Engineer 001 Unlocking Solutions</title>
   <style>
     body {
@@ -12,7 +13,6 @@
     }
     header {
       background-color: #00c3ff;
-      color: #fff;
       padding: 20px;
       text-align: center;
     }
@@ -22,6 +22,7 @@
       gap: 15px;
       background-color: #1a1c2c;
       padding: 10px 0;
+      flex-wrap: wrap;
     }
     nav a {
       color: white;
@@ -38,11 +39,6 @@
     }
     section.active {
       display: block;
-    }
-    .form-section {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
     }
     form input, form textarea, form select, form button {
       width: 100%;
@@ -72,6 +68,11 @@
       border-radius: 50%;
       font-size: 24px;
       text-decoration: none;
+      z-index: 100;
+    }
+    ul {
+      list-style: square;
+      margin-left: 20px;
     }
     .tool-button {
       display: inline-block;
@@ -84,45 +85,65 @@
     }
   </style>
 </head>
-<body onload="showSection('about')"><header>
+<body onload="showSection('about')">
+
+<header>
   <h1>De~Engineer 001 Unlocking Solutions</h1>
 </header>
+
 <nav>
   <a onclick="showSection('about')">About</a>
   <a onclick="showSection('services')">Services & Order</a>
   <a onclick="showSection('tools')">Tools</a>
+  <a onclick="showSection('software')">Software</a>
   <a onclick="showSection('brands')">Smartphone Brands</a>
   <a onclick="showSection('contact')">Contact</a>
+</nav>
 
-</nav><section id="about" class="active">
+<section id="about" class="active">
   <h2>About Us</h2>
-  <p>We specialize in unlocking mobile devices, removing FRP locks, IMEI repair, and providing premium mobile solutions. Fast, secure, and professional service guaranteed!</p>
-  
-</section><section id="services">
+  <p>We provide expert unlocking services, FRP bypass, IMEI repair, bootloader unlock, and iCloud solutions. Fast, safe, and trusted worldwide.</p>
+</section>
+
+<section id="services">
   <h2>Unlocking Services & Place Order</h2>
-  <div class="form-section">
-    <form action="https://formsubmit.co/hasdantech002@gmail.com" method="POST" onsubmit="showSuccess()">
-      <input type="hidden" name="_next" value="https://deengineer-unlock-site.github.io/#success">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="text" name="phone" placeholder="WhatsApp Number" required>
-      <label for="service">Select Service:</label>
-      <select name="service" required>
-        <option value="Network Unlock">Network Unlock</option>
-        <option value="FRP Bypass">FRP Bypass</option>
-        <option value="IMEI Repair">IMEI Repair</option>
-        <option value="Bootloader Unlock">Bootloader Unlock</option>
-        <option value="iCloud Clean Removal">iCloud Clean Removal</option>
-      </select>
-      <textarea name="details" placeholder="Enter device model or extra details" required></textarea>
-      <button type="submit">Submit Order</button>
-    </form>
-  </div>
-</section><section id="tools">
+  <form action="https://formsubmit.co/hasdantech002@gmail.com" method="POST" onsubmit="showSuccess()">
+    <input type="hidden" name="_next" value="https://deengineer-unlock-site.github.io/#success">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="phone" placeholder="WhatsApp Number" required>
+    <label>Select Service:</label>
+    <select name="service" required>
+      <option>Network Unlock</option>
+      <option>FRP Bypass</option>
+      <option>IMEI Repair</option>
+      <option>Bootloader Unlock</option>
+      <option>iCloud Removal</option>
+      <option>Carrier Check</option>
+      <option>Sim Lock Removal</option>
+      <option>Samsung KG Locked Fix</option>
+    </select>
+    <textarea name="details" placeholder="Device model & details" required></textarea>
+    <button type="submit">Submit Order</button>
+  </form>
+</section>
+
+<section id="tools">
   <h2>Remote Tools</h2>
-  <a class="tool-button" href="https://www.ultraviewer.net/en/UltraViewer_setup_6.6_en.exe" target="_blank">Download UltraViewer</a>
-  <a class="tool-button" href="https://anydesk.com/en/downloads" target="_blank">Download AnyDesk</a                                                                                        
-</section><section id="brands">
+  <a class="tool-button" href="https://www.ultraviewer.net/en/UltraViewer_setup_6.6_en.exe" target="_blank">UltraViewer</a>
+  <a class="tool-button" href="https://anydesk.com/en/downloads" target="_blank">AnyDesk</a>
+  <a class="tool-button" href="https://teamviewer.com/en/download/windows/" target="_blank">TeamViewer</a>
+</section>
+
+<section id="software">
+  <h2>Unlocking Software Downloads</h2>
+  <a class="tool-button" href="https://www.unlocktool.net/" target="_blank">UnlockTool</a>
+  <a class="tool-button" href="https://halabtech.com/android-tools/" target="_blank">HalabTech Tools</a>
+  <a class="tool-button" href="https://octoplusbox.com/en/download/software/" target="_blank">Octoplus Box</a>
+  <a class="tool-button" href="https://easy-firmware.com/index.php?a=downloads&b=folder&id=1240" target="_blank">Easy Firmware Tools</a>
+</section>
+
+<section id="brands">
   <h2>Smartphone Brands</h2>
   <ul>
     <li>Samsung</li>
@@ -131,21 +152,37 @@
     <li>iPhone</li>
     <li>Realme</li>
     <li>Xiaomi</li>
-    <li>Unisco</li>
-<li>Huawei</li>
+    <li>Huawei</li>
+    <li>Itel</li>
+    <li>Lenovo</li>
+    <li>Nokia</li>
+    <li>OnePlus</li>
+    <li>Vivo</li>
+    <li>Motorola</li>
+    <li>Alldocube</li>
+    <li>Unisoc (Spreadtrum)</li>
   </ul>
-</section><section id="contact">
+</section>
+
+<section id="contact">
   <h2>Contact Us</h2>
   <p>Email: <a href="mailto:hasdantech002@gmail.com">hasdantech002@gmail.com</a></p>
   <p>WhatsApp: <a href="https://wa.me/23275800808" target="_blank">+232 75800808</a></p>
   <p>WhatsApp: <a href="https://wa.me/23274035146" target="_blank">+232 74035146</a></p>
-</section><section id="success">
+</section>
+
+<section id="success">
   <h2>✅ Order Submitted!</h2>
-  <p>Thank you for your request. We will respond to your email or WhatsApp shortly.</p>
-</section><a href="https://wa.me/23275800808" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
+  <p>Thank you! We will contact you via email or WhatsApp shortly.</p>
+</section>
+
+<a href="https://wa.me/23275800808" class="whatsapp-float" title="Chat with us on WhatsApp">💬</a>
+
 <div class="footer">
   <p>&copy; 2025 De~Engineer 001 Unlocking Solutions. All rights reserved.</p>
-</div><script>
+</div>
+
+<script>
   function showSection(id) {
     document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
     document.getElementById(id).classList.add('active');
@@ -153,5 +190,7 @@
   function showSuccess() {
     setTimeout(() => showSection('success'), 500);
   }
-</script></body>
+</script>
+
+</body>
 </html>
