@@ -14,7 +14,11 @@
     nav a:hover { text-decoration: underline; }
     section { display: none; padding: 20px; }
     section.active { display: block; }
-    .tool-button { display: inline-block; margin: 10px 0; padding: 12px 20px; background: #1a73e8; color: #fff; text-decoration: none; border-radius: 8px; }
+    form input, form select, form textarea, form button {
+      width: 100%; padding: 10px; margin: 10px 0; border-radius: 6px; border: none;
+    }
+    form button { background: #00c3ff; color: white; font-weight: bold; cursor: pointer; }
+    .tool-button { display: inline-block; margin: 10px 10px 10px 0; padding: 12px 20px; background: #1a73e8; color: #fff; text-decoration: none; border-radius: 8px; }
     .footer { background: #1a1c2c; color: #ccc; padding: 15px; text-align: center; }
     .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff; padding: 12px 16px; border-radius: 50%; font-size: 24px; text-decoration: none; z-index: 100; }
   </style>
@@ -22,7 +26,7 @@
 <body onload="showSection('about')">
 
   <header>
-    <img src="https://i.imgur.com/NMfPy3P.png" alt="De~Engineer Logo"/>
+    <img src="https://i.imgur.com/NMfPy3P.png" alt="De~Engineer Logo" />
     <h1>De~Engineer 001 Unlocking Solutions</h1>
   </header>
 
@@ -37,15 +41,27 @@
 
   <section id="about" class="active">
     <h2>About Us</h2>
-    <p>We specialize in unlocking mobile devices, removing FRP locks, IMEI repair, and providing premium mobile solutions. Fast, secure, and professional service guaranteed.</p>
+    <p>We specialize in unlocking mobile devices, removing FRP locks, IMEI repair, and providing premium mobile solutions. Fast, secure, and professional service guaranteed!</p>
   </section>
 
   <section id="services">
     <h2>Unlocking Services & Place Order</h2>
-    <p>Click the button below to submit your unlocking request. It feeds directly into our Google Sheet, so you can track your order in real-time.</p>
-    <a class="tool-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdYOURSHEETID/viewform" target="_blank">
-      ➕ Fill Unlocking Order Form
-    </a>
+    <form action="https://formsubmit.co/hasdantech002@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="https://deengineer-unlock-site.github.io/#success">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="phone" placeholder="WhatsApp Number" required>
+      <select name="service" required>
+        <option value="">Select Service</option>
+        <option>Network Unlock</option>
+        <option>FRP Bypass</option>
+        <option>IMEI Repair</option>
+        <option>Bootloader Unlock</option>
+        <option>iCloud Removal</option>
+      </select>
+      <textarea name="details" placeholder="Device model or extra info" required></textarea>
+      <button type="submit">Submit Order</button>
+    </form>
   </section>
 
   <section id="software">
@@ -53,8 +69,8 @@
     <a class="tool-button" href="https://www.unlocktool.net" target="_blank">UnlockTool</a>
     <a class="tool-button" href="https://octoplusbox.com/" target="_blank">Octoplus</a>
     <a class="tool-button" href="https://chimera-tool.com/" target="_blank">Chimera Tool</a>
-    <a class="tool-button" href="https://www.miracleteam.in/" target="_blank">Miracle Box</a>
     <a class="tool-button" href="https://sigmakey.com/" target="_blank">SigmaKey</a>
+    <a class="tool-button" href="https://www.miracleteam.in/" target="_blank">Miracle Box</a>
   </section>
 
   <section id="tools">
@@ -80,7 +96,7 @@
     <p>WhatsApp 2: <a href="https://wa.me/23274035146" target="_blank">+232 74035146</a></p>
   </section>
 
-  <a href="https://wa.me/23275800808" class="whatsapp-float" title="Chat with us on WhatsApp">💬</a>
+  <a href="https://wa.me/23275800808" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
 
   <div class="footer">
     <p>&copy; 2025 De~Engineer 001 Unlocking Solutions. All rights reserved.</p>
@@ -92,5 +108,6 @@
       document.getElementById(id).classList.add('active');
     }
   </script>
+
 </body>
 </html>
