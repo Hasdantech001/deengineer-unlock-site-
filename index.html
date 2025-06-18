@@ -12,32 +12,23 @@
       color: #e0e0e0;
     }
     header {
-      background: #00c3ff;
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    header img {
-      max-height: 60px;
-      width: auto;
-      display: block;
+      background: linear-gradient(to right, #00c3ff, #007ea7);
+      padding: 20px;
+      text-align: center;
+      color: white;
     }
     header h1 {
-      font-size: 24px;
-      color: white;
       margin: 0;
-      white-space: nowrap;
+      font-size: 28px;
+      letter-spacing: 1px;
     }
     nav {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 15px;
       background: #1a1c2c;
       padding: 10px;
-      flex-wrap: wrap;
     }
     nav a {
       color: white;
@@ -94,8 +85,8 @@
       color: #ccc;
       padding: 15px;
       text-align: center;
-      margin-top: 40px;
       font-size: 14px;
+      margin-top: 40px;
     }
     .whatsapp-float {
       position: fixed;
@@ -118,15 +109,9 @@
       margin-bottom: 8px;
     }
     @media(max-width: 480px) {
-      header {
-        flex-direction: column;
-      }
       nav {
         flex-direction: column;
         align-items: center;
-      }
-      nav a {
-        padding: 8px 0;
       }
     }
   </style>
@@ -134,13 +119,12 @@
 <body onload="showSection('about')">
 
   <header>
-    <img src="https://i.imgur.com/0XPKDJ7.png" alt="De~Engineer Logo" />
     <h1>De~Engineer 001 Unlocking Solutions</h1>
   </header>
 
   <nav>
     <a onclick="showSection('about')">About</a>
-    <a onclick="showSection('services')">Services</a>
+    <a onclick="showSection('services')">Place Order</a>
     <a onclick="showSection('software')">Software</a>
     <a onclick="showSection('tools')">Tools</a>
     <a onclick="showSection('brands')">Smartphone Brands</a>
@@ -153,7 +137,7 @@
   </section>
 
   <section id="services">
-    <h2>Unlocking Services & Place Order</h2>
+    <h2>Place Order</h2>
     <form action="https://formsubmit.co/hasdantech002@gmail.com" method="POST">
       <input type="hidden" name="_next" value="https://deengineer-unlock-site.github.io/#success" />
       <input type="text" name="name" placeholder="Your Name" required />
@@ -174,18 +158,18 @@
 
   <section id="software">
     <h2>Unlocking Software</h2>
-    <a class="tool-button" href="https://www.unlocktool.net" target="_blank" rel="noopener">UnlockTool</a>
-    <a class="tool-button" href="https://octoplusbox.com/" target="_blank" rel="noopener">Octoplus</a>
-    <a class="tool-button" href="https://chimera-tool.com/" target="_blank" rel="noopener">Chimera Tool</a>
-    <a class="tool-button" href="https://sigmakey.com/" target="_blank" rel="noopener">SigmaKey</a>
-    <a class="tool-button" href="https://www.miracleteam.in/" target="_blank" rel="noopener">Miracle Box</a>
+    <a class="tool-button" href="https://www.unlocktool.net" target="_blank">UnlockTool</a>
+    <a class="tool-button" href="https://octoplusbox.com/" target="_blank">Octoplus</a>
+    <a class="tool-button" href="https://chimera-tool.com/" target="_blank">Chimera Tool</a>
+    <a class="tool-button" href="https://sigmakey.com/" target="_blank">SigmaKey</a>
+    <a class="tool-button" href="https://www.miracleteam.in/" target="_blank">Miracle Box</a>
   </section>
 
   <section id="tools">
     <h2>Remote Tools</h2>
-    <a class="tool-button" href="https://www.ultraviewer.net/en/UltraViewer_setup_6.6_en.exe" target="_blank" rel="noopener">UltraViewer</a>
-    <a class="tool-button" href="https://anydesk.com/en/downloads" target="_blank" rel="noopener">AnyDesk</a>
-    <a class="tool-button" href="https://www.teamviewer.com/en/download/windows/" target="_blank" rel="noopener">TeamViewer</a>
+    <a class="tool-button" href="https://www.ultraviewer.net/en/UltraViewer_setup_6.6_en.exe" target="_blank">UltraViewer</a>
+    <a class="tool-button" href="https://anydesk.com/en/downloads" target="_blank">AnyDesk</a>
+    <a class="tool-button" href="https://www.teamviewer.com/en/download/windows/" target="_blank">TeamViewer</a>
   </section>
 
   <section id="brands">
@@ -216,7 +200,7 @@
     <p>WhatsApp 2: <a href="https://wa.me/23274035146" target="_blank" style="color:#00c3ff;">+232 74035146</a></p>
   </section>
 
-  <a href="https://wa.me/23275800808" class="whatsapp-float" title="Chat on WhatsApp" target="_blank" rel="noopener">💬</a>
+  <a href="https://wa.me/23275800808" class="whatsapp-float" title="Chat on WhatsApp" target="_blank">💬</a>
 
   <div class="footer">
     <p>&copy; 2025 De~Engineer 001 Unlocking Solutions. All rights reserved.</p>
@@ -229,7 +213,6 @@
       window.location.hash = id;
     }
 
-    // Show section from URL hash on page load (optional)
     window.onload = () => {
       const hash = window.location.hash.substring(1);
       if (hash && document.getElementById(hash)) {
