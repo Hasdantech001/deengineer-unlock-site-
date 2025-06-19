@@ -1,4 +1,4 @@
-c<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -21,6 +21,7 @@ c<!DOCTYPE html>
       margin: 0;
       font-size: 28px;
       letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
     nav {
       display: flex;
@@ -70,15 +71,18 @@ c<!DOCTYPE html>
     form button:hover {
       background: #0099cc;
     }
-    .tool-button {
+    .tool-button, .firmware-button, .client-chat {
       display: inline-block;
       margin: 10px 10px 10px 0;
       padding: 12px 20px;
-      background: #1a73e8;
+      background: #007ea7;
       color: white;
       text-decoration: none;
       border-radius: 8px;
       font-size: 16px;
+    }
+    .tool-button:hover, .firmware-button:hover, .client-chat:hover {
+      background: #005f7a;
     }
     .footer {
       background: #1a1c2c;
@@ -129,7 +133,7 @@ c<!DOCTYPE html>
     <a onclick="showSection('tools')">Tools</a>
     <a onclick="showSection('brands')">Smartphone Brands</a>
     <a onclick="showSection('contact')">Contact</a>
-    <a onclick="showSection('firmware')">iphone firmwares</a>
+    <a onclick="showSection('firmware')">iPhone Firmwares</a>
   </nav>
 
   <section id="about" class="active">
@@ -144,6 +148,7 @@ c<!DOCTYPE html>
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <input type="text" name="phone" placeholder="WhatsApp Number" required />
+      <input type="text" name="orderid" placeholder="Order ID" required />
       <select name="service" required>
         <option value="">Select Service</option>
         <option>Network Unlock</option>
@@ -159,7 +164,10 @@ c<!DOCTYPE html>
       </select>
       <textarea name="details" placeholder="Device model or extra info" required></textarea>
       <button type="submit">Submit Order</button>
+      <input type="text" name="_honey" style="display:none">
     </form>
+
+    <a href="https://wa.me/23275800808" target="_blank" class="client-chat">💬 Chat with Support</a>
   </section>
 
   <section id="software">
@@ -176,12 +184,13 @@ c<!DOCTYPE html>
     <a class="tool-button" href="https://www.ultraviewer.net/en/UltraViewer_setup_6.6_en.exe" target="_blank">UltraViewer</a>
     <a class="tool-button" href="https://anydesk.com/en/downloads" target="_blank">AnyDesk</a>
     <a class="tool-button" href="https://www.teamviewer.com/en/download/windows/" target="_blank">TeamViewer</a>
-    
   </section>
-   <section id="firmware">
-     <h2>iphone firmware</h2>
-     <a class="firmware-button" href="https://www.bing.com/ck/a?!&&p=58ff223eeda286c3cf19eac3694fb81d4036bae1131c1046e4242215be32c20dJmltdHM9MTc1MDI5MTIwMA&ptn=3&ver=2&hsh=4&fclid=376e1c8e-3ea5-6d37-28d1-09b03f716cea&psq=ipsw+downloads&u=a1aHR0cHM6Ly9pcHN3Lm1lLw&ntb=1" target="_blank">Download ipsw files</a>
-   </section>
+
+  <section id="firmware">
+    <h2>iPhone Firmware</h2>
+    <a class="firmware-button" href="https://ipsw.me" target="_blank">Download IPSW Files</a>
+  </section>
+
   <section id="brands">
     <h2>Smartphone Brands</h2>
     <ul>
@@ -208,7 +217,7 @@ c<!DOCTYPE html>
     <p>Email: <a href="mailto:hasdantech002@gmail.com" style="color:#00c3ff;">hasdantech002@gmail.com</a></p>
     <p>WhatsApp 1: <a href="https://wa.me/23275800808" target="_blank" style="color:#00c3ff;">+232 75800808</a></p>
     <p>WhatsApp 2: <a href="https://wa.me/23274035146" target="_blank" style="color:#00c3ff;">+232 74035146</a></p>
-    <p>Telegram 3: <a href="https://t.me/hasdantech001" target="_blank" style="color:green;">t.me/hasdantech001</a><p>
+    <p>Telegram 3: <a href="https://t.me/hasdantech001" target="_blank" style="color:green;">t.me/hasdantech001</a></p>
   </section>
 
   <a href="https://wa.me/23275800808" class="whatsapp-float" title="Chat on WhatsApp" target="_blank">💬</a>
@@ -231,6 +240,5 @@ c<!DOCTYPE html>
       }
     };
   </script>
-
 </body>
 </html>
