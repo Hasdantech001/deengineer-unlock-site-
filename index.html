@@ -23,7 +23,7 @@
       letter-spacing: 1px;
     }
     nav {
-      display: flex;
+      display: none; /* Hidden initially, shown after entering */
       justify-content: center;
       flex-wrap: wrap;
       gap: 15px;
@@ -47,6 +47,32 @@
     }
     section.active {
       display: block;
+    }
+    /* Landing page styling */
+    #landing {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      text-align: center;
+    }
+    #landing h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    #enter-button {
+      background: #00c3ff;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    #enter-button:hover {
+      background: #0099cc;
     }
     form input,
     form select,
@@ -122,8 +148,7 @@
     <h1>De~Engineer 001 Unlocking Solutions</h1>
   </header>
 
-  <nav>
-    <a onclick="showSection('landing')">Home</a>
+  <nav id="main-nav">
     <a onclick="showSection('about')">About</a>
     <a onclick="showSection('services')">Place Order</a>
     <a onclick="showSection('software')">Software</a>
@@ -132,11 +157,10 @@
     <a onclick="showSection('contact')">Contact</a>
   </nav>
 
-  <!-- Landing Page -->
   <section id="landing" class="active">
     <h2>Welcome to De~Engineer 001 Unlocking Solutions</h2>
     <p>Your trusted partner for mobile unlocking, FRP bypass, IMEI repair, and more.</p>
-    <p>Use the navigation above to explore our services, tools, and contact information.</p>
+    <button id="enter-button">Enter</button>
   </section>
 
   <section id="about">
@@ -223,22 +247,34 @@
   </div>
 
   <script>
+    const nav = document.getElementById('main-nav');
+    const landing = document.getElementById('landing');
+
+    // Show section, hide others
     function showSection(id) {
-      // Hide all sections
       document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-      // Show only the selected section
-      const section = document.getElementById(id);
-      if(section) section.classList.add('active');
-      // Update URL hash in the address bar
+      const sec = document.getElementById(id);
+      if (sec) sec.classList.add('active');
       window.location.hash = id;
     }
 
+    // Enter button click handler
+    document.getElementById('enter-button').addEventListener('click', () => {
+      landing.style.display = 'none';   // Hide landing
+      nav.style.display = 'flex';       // Show nav
+      showSection('about');             // Show About as default after enter
+    });
+
+    // On page load - if hash exists show that section and show nav, else show landing
     window.onload = () => {
-      // Show section based on URL hash or default to landing page
       const hash = window.location.hash.substring(1);
       if (hash && document.getElementById(hash)) {
+        landing.style.display = 'none';
+        nav.style.display = 'flex';
         showSection(hash);
       } else {
+        landing.style.display = 'flex';
+        nav.style.display = 'none';
         showSection('landing');
       }
     };
