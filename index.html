@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,15 +15,15 @@
       padding: 20px;
       text-align: center;
       color: white;
+      display: none;
     }
     header h1 {
       margin: 0;
       font-size: 28px;
       letter-spacing: 1px;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
     nav {
-      display: flex;
+      display: none;
       justify-content: center;
       flex-wrap: wrap;
       gap: 15px;
@@ -49,48 +48,35 @@
     section.active {
       display: block;
     }
-    form input,
-    form select,
-    form textarea,
-    form button {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 6px;
-      border: none;
-      font-size: 16px;
-      box-sizing: border-box;
+    .landing {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      text-align: center;
+      color: white;
     }
-    form button {
+    .landing h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .landing p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    .landing button {
+      padding: 12px 24px;
+      font-size: 16px;
       background: #00c3ff;
       color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    form button:hover {
-      background: #0099cc;
-    }
-    .tool-button, .firmware-button, .client-chat {
-      display: inline-block;
-      margin: 10px 10px 10px 0;
-      padding: 12px 20px;
-      background: #007ea7;
-      color: white;
-      text-decoration: none;
+      border: none;
       border-radius: 8px;
-      font-size: 16px;
+      cursor: pointer;
     }
-    .tool-button:hover, .firmware-button:hover, .client-chat:hover {
-      background: #005f7a;
-    }
-    .footer {
-      background: #1a1c2c;
-      color: #ccc;
-      padding: 15px;
-      text-align: center;
-      font-size: 14px;
-      margin-top: 40px;
+    .landing button:hover {
+      background: #0099cc;
     }
     .whatsapp-float {
       position: fixed;
@@ -104,141 +90,70 @@
       text-decoration: none;
       z-index: 1000;
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      display: none;
     }
-    ul {
-      padding-left: 20px;
-      line-height: 1.6;
+    .contact-info {
+      display: none;
+      padding: 20px;
+      text-align: center;
     }
-    ul li {
-      margin-bottom: 8px;
-    }
-    @media(max-width: 480px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
+    .contact-info a {
+      color: #00c3ff;
+      text-decoration: none;
+      display: block;
+      margin: 10px 0;
     }
   </style>
 </head>
-<body onload="showSection('about')">
-
-  <header>
+<body>
+  <div class="landing">
     <h1>De~Engineer 001 Unlocking Solutions</h1>
-  </header>
-
-  <nav>
+    <p>Fast • Secure • Remote Unlocking Services</p>
+    <button onclick="enterWebsite()">Enter Website</button>
+  </div>  <header>
+    <h1>De~Engineer 001 Unlocking Solutions</h1>
+  </header>  <nav>
     <a onclick="showSection('about')">About</a>
     <a onclick="showSection('services')">Place Order</a>
     <a onclick="showSection('software')">Software</a>
     <a onclick="showSection('tools')">Tools</a>
     <a onclick="showSection('brands')">Smartphone Brands</a>
     <a onclick="showSection('contact')">Contact</a>
-    <a onclick="showSection('firmware')">iPhone Firmwares</a>
-  </nav>
-
-  <section id="about" class="active">
+    <a onclick="showSection('firmware')">iPhone Firmware</a>
+  </nav>  <section id="about">
     <h2>About Us</h2>
     <p>We specialize in unlocking mobile devices, removing FRP locks, IMEI repair, and providing premium mobile solutions. Fast, secure, and professional service guaranteed!</p>
-  </section>
-
-  <section id="services">
-    <h2>Place Order</h2>
-    <form action="https://formsubmit.co/hasdantech002@gmail.com" method="POST">
-      <input type="hidden" name="_next" value="https://deengineer-unlock-site.github.io/#success" />
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <input type="text" name="phone" placeholder="WhatsApp Number" required />
-      <input type="text" name="orderid" placeholder="Order ID" required />
-      <select name="service" required>
-        <option value="">Select Service</option>
-        <option>Network Unlock</option>
-        <option>FRP Bypass</option>
-        <option>IMEI Repair</option>
-        <option>Bootloader Unlock</option>
-        <option>iCloud Removal</option>
-        <option>KG Lock Remove</option>
-        <option>MDM Permanent Unlock</option>
-        <option>Reset + FRP Unlock</option>
-        <option>Unavailable Screen</option>
-        <option>Hello Screen</option>
-      </select>
-      <textarea name="details" placeholder="Device model or extra info" required></textarea>
-      <button type="submit">Submit Order</button>
-      <input type="text" name="_honey" style="display:none">
-    </form>
-
-    <a href="https://wa.me/23275800808" target="_blank" class="client-chat">💬 Chat with Support</a>
-  </section>
-
-  <section id="software">
-    <h2>Unlocking Software</h2>
-    <a class="tool-button" href="https://www.unlocktool.net" target="_blank">UnlockTool</a>
-    <a class="tool-button" href="https://octoplusbox.com/" target="_blank">Octoplus</a>
-    <a class="tool-button" href="https://chimera-tool.com/" target="_blank">Chimera Tool</a>
-    <a class="tool-button" href="https://sigmakey.com/" target="_blank">SigmaKey</a>
-    <a class="tool-button" href="https://www.miracleteam.in/" target="_blank">Miracle Box</a>
-  </section>
-
-  <section id="tools">
-    <h2>Remote Tools</h2>
-    <a class="tool-button" href="https://www.ultraviewer.net/en/UltraViewer_setup_6.6_en.exe" target="_blank">UltraViewer</a>
-    <a class="tool-button" href="https://anydesk.com/en/downloads" target="_blank">AnyDesk</a>
-    <a class="tool-button" href="https://www.teamviewer.com/en/download/windows/" target="_blank">TeamViewer</a>
-  </section>
-
-  <section id="firmware">
-    <h2>iPhone Firmware</h2>
-    <a class="firmware-button" href="https://ipsw.me" target="_blank">Download IPSW Files</a>
-  </section>
-
-  <section id="brands">
-    <h2>Smartphone Brands</h2>
-    <ul>
-      <li>Samsung</li>
-      <li>Infinix</li>
-      <li>Tecno</li>
-      <li>iPhone</li>
-      <li>Realme</li>
-      <li>Xiaomi</li>
-      <li>Huawei</li>
-      <li>Itel</li>
-      <li>Lenovo</li>
-      <li>Nokia</li>
-      <li>Oppo</li>
-      <li>OnePlus</li>
-      <li>Vivo</li>
-      <li>Motorola</li>
-      <li>Alldocube</li>
-    </ul>
-  </section>
-
-  <section id="contact">
+  </section>  <section id="contact" class="contact-info">
     <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:hasdantech002@gmail.com" style="color:#00c3ff;">hasdantech002@gmail.com</a></p>
-    <p>WhatsApp 1: <a href="https://wa.me/23275800808" target="_blank" style="color:#00c3ff;">+232 75800808</a></p>
-    <p>WhatsApp 2: <a href="https://wa.me/23274035146" target="_blank" style="color:#00c3ff;">+232 74035146</a></p>
-    <p>Telegram 3: <a href="https://t.me/hasdantech001" target="_blank" style="color:green;">t.me/hasdantech001</a></p>
-  </section>
-
-  <a href="https://wa.me/23275800808" class="whatsapp-float" title="Chat on WhatsApp" target="_blank">💬</a>
-
-  <div class="footer">
-    <p>&copy; 2025 De~Engineer 001 Unlocking Solutions. All rights reserved.</p>
-  </div>
+    <a href="mailto:hasdantech002@gmail.com">Email: hasdantech002@gmail.com</a>
+    <a href="https://wa.me/23275800808" target="_blank">WhatsApp 1: +232 75800808</a>
+    <a href="https://wa.me/23274035146" target="_blank">WhatsApp 2: +232 74035146</a>
+    <a href="https://t.me/hasdantech001" target="_blank">Telegram: t.me/hasdantech001</a>
+  </section><a href="https://wa.me/23275800808" class="whatsapp-float" title="Chat on WhatsApp" target="_blank">💬</a>
 
   <script>
+    function enterWebsite() {
+      document.querySelector('.landing').style.display = 'none';
+      document.querySelector('header').style.display = 'block';
+      document.querySelector('nav').style.display = 'flex';
+      document.querySelectorAll('section').forEach(s => s.style.display = 'none');
+      document.querySelector('.whatsapp-float').style.display = 'block';
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    }
+
     function showSection(id) {
       document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      window.location.hash = id;
+      if (id && document.getElementById(id)) {
+        document.getElementById(id).classList.add('active');
+      }
     }
 
     window.onload = () => {
       const hash = window.location.hash.substring(1);
       if (hash && document.getElementById(hash)) {
+        enterWebsite();
         showSection(hash);
       }
     };
-  </script>
-</body>
+  </script></body>
 </html>
