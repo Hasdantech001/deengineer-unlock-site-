@@ -149,18 +149,18 @@
   </header>
 
   <nav id="main-nav">
-    <a onclick="showSection('about')">About</a>
-    <a onclick="showSection('services')">Place Order</a>
-    <a onclick="showSection('software')">Software</a>
-    <a onclick="showSection('tools')">Tools</a>
-    <a onclick="showSection('brands')">Smartphone Brands</a>
-    <a onclick="showSection('contact')">Contact</a>
+    <a href="#about" onclick="showSection('about')">About</a>
+    <a href="#services" onclick="showSection('services')">Place Order</a>
+    <a href="#software" onclick="showSection('software')">Software</a>
+    <a href="#tools" onclick="showSection('tools')">Tools</a>
+    <a href="#brands" onclick="showSection('brands')">Smartphone Brands</a>
+    <a href="#contact" onclick="showSection('contact')">Contact</a>
   </nav>
 
   <section id="landing" class="active">
     <h2>Welcome to De~Engineer 001 Unlocking Solutions</h2>
     <p>Your trusted partner for mobile unlocking, FRP bypass, IMEI repair, and more.</p>
-    <button id="enter-button">Enter</button>
+    <button id="enter-button" type="button">Enter</button>
   </section>
 
   <section id="about">
@@ -207,7 +207,11 @@
     <a class="tool-button" href="https://www.ultraviewer.net/en/UltraViewer_setup_6.6_en.exe" target="_blank">UltraViewer</a>
     <a class="tool-button" href="https://anydesk.com/en/downloads" target="_blank">AnyDesk</a>
     <a class="tool-button" href="https://www.teamviewer.com/en/download/windows/" target="_blank">TeamViewer</a>
-    <a class="tool-button" href="https://www.bing.com/ck/a?!&&p=58ff223eeda286c3cf19eac3694fb81d4036bae1131c1046e4242215be32c20dJmltdHM9MTc1MDI5MTIwMA&ptn=3&ver=2&hsh=4&fclid=376e1c8e-3ea5-6d37-28d1-09b03f716cea&psq=ipsw+downloads&u=a1aHR0cHM6Ly9pcHN3Lm1lLw&ntb=1" target="_blank">Download ipsw files</a> 
+    <a class="tool-button" href="https://www.bing.com/ck/a?!&&p=58ff223eeda286c3cf19eac3694fb81d4036bae1131c1046e4242215be32c20dJmltdHM9MTc1MDI5MTIwMA&ptn=3&ver=2&hsh=4&fclid=376e1c8e-3ea5-6d37-28d1-09b03f716cea&psq=ipsw+downloads&u=a1aHR0cHM6Ly9pcHN3Lm1lLw&ntb=1" target="_blank">Download IPSW files</a> 
+
+    <!-- USB Redirector links -->
+    <a class="tool-button" href="https://www.incentivespro.com/usb-redirector-technician.html" target="_blank">USB Redirector Technician</a>
+    <a class="tool-button" href="https://www.incentivespro.com/usb-redirector-customer.html" target="_blank">USB Redirector Customer</a>
   </section>
 
   <section id="brands">
@@ -278,6 +282,14 @@
         showSection('landing');
       }
     };
+
+    // Handle browser back/forward buttons for hash navigation
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.substring(1);
+      if (hash && document.getElementById(hash)) {
+        showSection(hash);
+      }
+    });
   </script>
 
 </body>
